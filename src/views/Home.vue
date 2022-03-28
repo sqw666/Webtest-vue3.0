@@ -1,18 +1,41 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <div class="qa-container">问答</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+// import { getCategory } from "@/api/receiving";
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+  name: "Home",
+  components: {},
+  props: {},
+  data() {
+    return {
+      arr: [],
+    };
+  },
+  computed: {},
+  watch: {},
+  created() {
+    this.getData();
+  },
+  mounted() {},
+  methods: {
+    getData() {
+      this.axios
+        .get("/category")
+        .then((response) => {
+          if (response.status == 200) {
+            this.arr = response.data;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+};
 </script>
+
+<style scoped lang="less">
+</style>
