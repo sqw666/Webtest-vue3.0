@@ -2,7 +2,7 @@
   <div class="qa-container">
     <div class="header w">
       <div class="logo">
-        <img src="./images/logo.png" alt="" />
+        <img src="./images/logo.png" alt="222" />
       </div>
       <div class="nav">
         <ul>
